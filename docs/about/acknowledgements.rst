@@ -13,10 +13,10 @@ Huge thank you to:
 GitHub contributers (ordered by number of commits):
 
 .. contributors:: AICONSlab/MIRACL
-    :exclude: mgoubran,entiri,jono3030,AAttarpour
     :avatars:
     :order: DESC
 
 PR's:
 
 - `dariocalvarez <https://github.com/DarioCAlvarez>`_
+- `a-gubarev <https://github.com/a-gubarev>`_

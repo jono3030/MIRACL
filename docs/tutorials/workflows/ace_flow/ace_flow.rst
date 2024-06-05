@@ -57,18 +57,18 @@ The following information will be printed to the terminal:
      4) Warps voxelied segmentation maps from native space to Allen atlas
      5) Generates group-wise heatmaps of cell density using the average of voxelized and warped segmentation maps in each group
      6) Computes group-level statistics/correlation using cluster-wise analysis on voxelized and warped segmentation maps
-   
-   Single or multi method arguments:
+
+   single or multi method arguments:
       -s SINGLE_TIFF_DIR, --single SINGLE_TIFF_DIR
                             path to single raw tif/tiff data folder
       -c CONTROL_BASE_DIR CONTROL_TIFF_DIR_EXAMPLE, --control CONTROL_BASE_DIR CONTROL_TIFF_DIR_EXAMPLE
                             FIRST: path to base control directory. SECOND: example
                             path to control subject tiff directory
-      -e EXPERIMENT_BASE_DIR EXPERIMENT_TIFF_DIR_EXAMPLE, --experiment EXPERIMENT_BASE_DIR EXPERIMENT_TIFF_DIR_EXAMPLE
-                            FIRST: path to base experiment directory. SECOND:
-                            example path to experiment subject tiff directory
+      -t TREATED_BASE_DIR TREATED_TIFF_DIR_EXAMPLE, --experiment TREATED_BASE_DIR TREATED_TIFF_DIR_EXAMPLE
+                            FIRST: path to base treated directory. SECOND:
+                            example path to treated subject tiff directory
 
-   required arguments:
+   required arguments (set single or multi method arguments first):
       -sao SA_OUTPUT_FOLDER, --sa_output_folder SA_OUTPUT_FOLDER
                             path to output file folder
       -sam {unet,unetr,ensemble}, --sa_model_type {unet,unetr,ensemble}

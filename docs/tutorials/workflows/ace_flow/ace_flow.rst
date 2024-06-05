@@ -20,11 +20,19 @@ Main Inputs
 ============
 
 Control and Treated directories, containing whole-brain 3D LSFM datasets for multiple subjects.
+
 OR 
+
 A single directory containing a single subject's whole-brain 3D LSFM dataset.
 
 CLI
 ===
+
+.. attention::
+
+   Make sure that MIRACL is installed with GPU forwarding and that it is 
+   running correctly. Follow our :doc:`installation instructions <../../../installation/installation>`
+   if you have not done that yet.
 
 To get more information about the workflow and its required arguments 
 use the following command on the cli:
@@ -118,7 +126,7 @@ The following information will be printed to the terminal:
    ==================================  ================================================  ===================  ===================================================================================================
    \-s, \-\-single                     SINGLE_TIFF_DIR                                   ``str``              path to single raw tif/tiff data folder
    \-c, \-\-control                    CONTROL_BASE_DIR, CONTROL_TIFF_DIR_EXAMPLE        ``(str, str)``       FIRST: path to base control directory; SECOND: example path to control subject tiff directory
-   \-e, \-\-experiment                 EXPERIMENT_BASE_DIR, EXPERIMENT_TIFF_DIR_EXAMPLE  ``(str, str)``       FIRST: path to base experiment directory; SECOND: example path to experiment subject tiff directory
+   \-t, \-\-treated                    TREATED_BASE_DIR, TREATED_TIFF_DIR_EXAMPLE        ``(str, str)``       FIRST: path to base treated directory; SECOND: example path to treated subject tiff directory
    \-sam, \-\-sa_model_type            {unet,unetr,ensemble}                             ``str``              model architecture              
    \-sao, \-\-sa_output_folder         SA_OUTPUT_FOLDER                                  ``str``              path to output file folder
    \-sar, \-\-sa_resolution            X-res Y-res Z-res                                 ``(str, str, str)`` 
@@ -172,7 +180,7 @@ Example of running ACE flow on multiple subjects:
 
    $ miracl flow ace \
       -c ./non_walking/ ./non_walking/Newton_HC1/cells/ \
-      -e ./walking/ ./walking/Newton_UI1/cells/ \
+      -t ./walking/ ./walking/Newton_UI1/cells/ \
       -sao ./output_dir \
       -sam unet \
       --overwrite
@@ -196,7 +204,7 @@ Example of running only ACE cluster wise analysis on voxelized and warped segmen
 
    $ miracl stats ace \
       -c ./ctrl/ \
-      -e ./treated/ \
+      -t ./treated/ \
       -sao ./output_dir \
 
 .. |linktoworkshop| replace:: :doc:`here <../../../downloads/workshops/2024/stanford_20_03_2024/stanford_20_03_2024>`
